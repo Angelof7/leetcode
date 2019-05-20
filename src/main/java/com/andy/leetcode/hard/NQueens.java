@@ -70,22 +70,33 @@ public class NQueens {
         return sb.toString();
     }
 
+//    private boolean isValid(List<String> puzzle, int row, int column, int n) {
+//        for (int i = 0; i < row; i++) {
+//            if (puzzle.get(i).substring(column, column + 1).equals("Q")) {
+//                // 同一列不得有Q
+//                return false;
+//            }
+//        }
+//        for (int i = row - 1, j = column - 1; i >= 0 && j >= 0; i--, j--) {
+//            if (puzzle.get(i).substring(j, j + 1).equals("Q")) {
+//                // 左斜方不得有Q
+//                return false;
+//            }
+//        }
+//        for (int i = row - 1, j = column + 1; i >= 0 && j < n; i--, j++) {
+//            if (puzzle.get(i).substring(j, j + 1).equals("Q")) {
+//                // 右斜方不得有Q
+//                return false;
+//            }
+//        }
+//        return true;
+//    }
+
     private boolean isValid(List<String> puzzle, int row, int column, int n) {
         for (int i = 0; i < row; i++) {
-            if (puzzle.get(i).substring(column, column + 1).equals("Q")) {
-                // 同一列不得有Q
-                return false;
-            }
-        }
-        for (int i = row - 1, j = column - 1; i >= 0 && j >= 0; i--, j--) {
-            if (puzzle.get(i).substring(j, j + 1).equals("Q")) {
-                // 左斜方不得有Q
-                return false;
-            }
-        }
-        for (int i = row - 1, j = column + 1; i >= 0 && j < n; i--, j++) {
-            if (puzzle.get(i).substring(j, j + 1).equals("Q")) {
-                // 右斜方不得有Q
+            int columnIndex = puzzle.get(i).indexOf("Q");
+            if (columnIndex == column ||
+                    Math.abs(row - i) == Math.abs(column - columnIndex)) {
                 return false;
             }
         }
