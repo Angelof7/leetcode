@@ -17,6 +17,8 @@ public class SwapNodesInPairs {
      * Example:
      * <p>
      * Given 1->2->3->4, you should return the list as 2->1->4->3.
+     *
+     * @link https://leetcode.com/problems/swap-nodes-in-pairs/
      */
     public ListNode swapPairs(ListNode head) {
 
@@ -30,7 +32,7 @@ public class SwapNodesInPairs {
             }
 
             ListNode temp = cur.next;
-            cur.next = cur.next.next;
+            cur.next = temp.next;
             temp.next = cur;
 
             pre = cur;
