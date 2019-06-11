@@ -22,6 +22,29 @@ public class LengthOfLastWord {
         }
         int lastWordLength = 0;
         int count = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ' ') {
+                if (count != 0) {
+                    lastWordLength = count;
+                    count = 0;
+                    break;
+                }
+            } else {
+                count++;
+            }
+        }
+        if (count != 0) {
+            lastWordLength = count;
+        }
+        return lastWordLength;
+    }
+
+    public int lengthOfLastWord1(String s) {
+        if (s == null || s.length() == 0) {
+            return 0;
+        }
+        int lastWordLength = 0;
+        int count = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == ' ') {
                 if (count != 0) {
@@ -51,10 +74,11 @@ public class LengthOfLastWord {
     }
 
     public static void main(String[] args) {
-        System.out.println(new LengthOfLastWord().lengthOfLastWord2("Hello World"));
-        System.out.println(new LengthOfLastWord().lengthOfLastWord2("Hello World  "));
-        System.out.println(new LengthOfLastWord().lengthOfLastWord2("  Hello World  "));
-        System.out.println(new LengthOfLastWord().lengthOfLastWord2("  Hello"));
-        System.out.println(new LengthOfLastWord().lengthOfLastWord2("  Hello  "));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("Hello World"));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("Hello World  "));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("  Hello World  "));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("  Hello"));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("  Hello  "));
+        System.out.println(new LengthOfLastWord().lengthOfLastWord("  "));
     }
 }
