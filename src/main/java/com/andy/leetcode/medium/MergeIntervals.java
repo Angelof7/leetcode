@@ -30,6 +30,8 @@ public class MergeIntervals {
             return intervals;
         }
         sort(intervals, 0, intervals.length - 1);
+        // 没有使用归并排序 效率低
+//        Arrays.parallelSort(intervals, (o1, o2) -> o1[0] - o2[0]);
         int k = 0;
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i][0] >= intervals[k][0] && intervals[i][0] <= intervals[k][1]) {
@@ -130,7 +132,7 @@ public class MergeIntervals {
         PrintArrayUtil.print(new MergeIntervals().merge(intervals));
         intervals = new int[][]{
                 {1, 4},
-                {2, 3}
+                {0, 3}
         };
         PrintArrayUtil.print(new MergeIntervals().merge(intervals));
     }
