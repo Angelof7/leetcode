@@ -29,20 +29,18 @@ public class MergeIntervals {
         if (intervals == null || intervals.length <= 1) {
             return intervals;
         }
-        int[][] result = new int[intervals.length][2];
         sort(intervals, 0, intervals.length - 1);
         int k = 0;
-        result[0] = intervals[0];
         for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] >= result[k][0] && intervals[i][0] <= result[k][1]) {
+            if (intervals[i][0] >= intervals[k][0] && intervals[i][0] <= intervals[k][1]) {
                 //overlap
-                result[k] = new int[]{result[k][0], Math.max(result[k][1], intervals[i][1])};
+                intervals[k][1] = Math.max(intervals[k][1], intervals[i][1]);
             } else {
                 k++;
-                result[k] = intervals[i];
+                intervals[k] = intervals[i];
             }
         }
-        return Arrays.copyOf(result, k + 1);
+        return Arrays.copyOf(intervals, k + 1);
     }
 
     /**
