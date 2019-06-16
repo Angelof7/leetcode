@@ -24,10 +24,10 @@ public class PrintArrayUtil {
     }
 
     public static void print(int[][] arr) {
-        System.out.print("[");
+        System.out.println("[");
         for (int i = 0; i < arr.length; i++) {
             if (i != 0) {
-                System.out.print(", ");
+                System.out.println(", ");
             }
             System.out.print("[");
             for (int j = 0; j < arr[i].length; j++) {
@@ -38,7 +38,6 @@ public class PrintArrayUtil {
             }
             System.out.print("]");
         }
-        System.out.print("]");
-        System.out.println();
+        System.out.println("]");
     }
 }
