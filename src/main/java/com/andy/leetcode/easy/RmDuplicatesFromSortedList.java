@@ -1,4 +1,4 @@
-package com.andy.leetcode.medium;
+package com.andy.leetcode.easy;
 
 import com.andy.leetcode.common.ListNode;
 import com.andy.leetcode.common.PrintListUtil;
