@@ -1,5 +1,7 @@
 package com.andy.leetcode.easy;
 
+import com.andy.leetcode.common.ListNode;
+
 /**
  * Created by andy on 2019/5/8.
  */
@@ -79,11 +81,3 @@ public class MergeTwoSortedLists {
     }
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
-    }
-}
