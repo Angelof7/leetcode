@@ -4,7 +4,6 @@ import com.andy.leetcode.common.PrintArrayUtil;
 
 /**
  * Author   : andy.gao
- * Mail     : gaochao07@meituan.com
  * Date     : 2019-07-11
  * Project  : leetcode
  */
