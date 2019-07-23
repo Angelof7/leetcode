@@ -8,7 +8,6 @@ import java.util.Stack;
 
 /**
  * Author   : andy.gao
- * Mail     : gaochao07@meituan.com
  * Date     : 2019-07-23
  * Project  : leetcode
  */
