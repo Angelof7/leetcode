@@ -7,7 +7,6 @@ import java.util.List;
 
 /**
  * Author   : andy.gao
- * Mail     : gaochao07@meituan.com
  * Date     : 2019-07-31
  * Project  : leetcode
  */
